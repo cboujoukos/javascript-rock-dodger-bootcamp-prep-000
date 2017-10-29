@@ -71,7 +71,9 @@ function createRock(x) {
    * Now that we have a rock, we'll need to append
    * it to GAME and move it downwards.
    */
+   /*
   $("#game").append('rock');
+  */
 
   /**
    * This function moves the rock. (2 pixels at a time
@@ -124,9 +126,9 @@ function moveDodger(e) {
    * we've declared for you above.)
    * And be sure to use the functions declared below!
    */
+/*
 
-
-   document.addEventListener('keydown', function(e) {
+   document.addEventListener('keypress', function(e) {
      if (e.which === 37) {
        moveDodgerLeft()
      }
@@ -134,9 +136,10 @@ function moveDodger(e) {
    document.addEventListener('keyup', function(e) {
      if (e.which === 37) {
        //figure out a way to cancel movement
+       //cancelAnimationFrame(moveDodgerLeft)
      }
    })
-   document.addEventListener('keydown', function(e) {
+   document.addEventListener('keypress', function(e) {
      if (e.which === 39) {
        moveDodgerRight()
      }
@@ -148,21 +151,26 @@ function moveDodger(e) {
    })
 }
 
+*/
 function moveDodgerLeft() {
   // implement me!
   /**
    * This function should move DODGER to the left
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
-   var leftNumbers = dodger.style.left.replace('px', '')
-   var left = parseInt(leftNumbers, 10)
+   //var leftNumbers = dodger.style.left.replace('px', '')
+   //var left = parseInt(leftNumbers, 10)
+   /*
+   var left = positionToInteger(DODGER.style.left)
 
-   if (positionToInteger(DODGER.style.left) > 0) {
-     dodger.style.left = `${left - 4}px`;
+   if (left > 0 && ) {
+     DODGER.style.left = `${left - 4}px`;
      requestAnimationFrame(moveDodgerLeft)
    }
+   requestAnimationFrame(moveDodgerLeft)
 }
-requestAnimationFrame(moveDodgerLeft)
+
+*/
 
 function moveDodgerRight() {
   // implement me!
@@ -170,15 +178,18 @@ function moveDodgerRight() {
    * This function should move DODGER to the right
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
+   /*
   var rightNumbers = dodger.style.left.replace('px', '')
   var left = parseInt(rightNumbers, 10)
 
-  if (left < 360) {
+  if (positionToInteger(DODGER.style.left) < 360) {
     dodger.style.left = `${left + 4}px`;
     requestAnimationFrame(moveDodgerRight)
   }
+  requestAnimationFrame(moveDodgerRight)
 }
-requestAnimationFrame(moveDodgerRight)
+
+*/
 
 /**
  * @param {string} p The position property
