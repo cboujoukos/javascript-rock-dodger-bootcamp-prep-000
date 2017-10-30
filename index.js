@@ -168,6 +168,18 @@ function moveDodger(e) {
     moveDodgerRight()
   }
 }
+function stopDodger() {
+  if (e.which === 37) {
+    e.preventDefault();
+    e.stopPropagation();
+    window.cancelAnimationFrame(moveDodgerLeft)
+  }
+  if (e.which === 39) {
+    e.preventDefault();
+    e.stopPropagation();
+    window.cancelAnimationFrame(moveDodgerRight)
+  }
+}
 
 function moveDodgerLeft() {
   // implement me!
@@ -216,6 +228,7 @@ function positionToInteger(p) {
 
 function start() {
   window.addEventListener('keydown', moveDodger)
+  window.addEventListener('keyup', stopDodger)
 
 
   START.style.display = 'none'
