@@ -25,6 +25,8 @@
 
 #restart {
   position: absolute;
+  left: 500
+  bottom: 0
   text-align: center;
 }
 
